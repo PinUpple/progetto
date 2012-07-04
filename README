@@ -1,0 +1,16 @@
+CONTESTO
+Ogni laboratorio o docente ha a disposizione un certo numero di risorse come libri, portatili, attrezzature elettroniche, .. Tali risorse possono essere personali (libri, dispense, atti di convegno, ..) o attribuite ad un laboratorio di ricerca di cui in genere il docente è il responsabile.
+Per motivi didattici o di ricerca, il docente può decidere di assegnare o prestare per periodi di tempo ben definiti tali risorse ad altri docenti, tesisti, dottorati, studenti, personale esterno, ecc.
+L'assegnazione prevede che la risorsa possa essere consultata/utilizzata all'interno del laboratorio; mentre, il prestito implica che lo studente possa portare tale risorsa fuori dal laboratorio.
+
+PROGETTO
+Si dovrà sviluppare un'applicazione che permetta di:
+• Censire le risorse. Ogni risorsa deve essere caratterizzata da specifiche proprietà e deve essere assegnata al docente o al laboratorio. Il docente, in fase di censimento della risorsa, deve poter definire una proprietà e assegnarli un valore tipo condizioni della risorsa, foto, ecc. Una risorsa è caratterizzata da una quantità disponibile (valore numerico).
+• Permettere al docente (colui che presta) di:
+	• accedere al sistema (username / password)
+	• censire le risorse (proprietà, tipologia personali/laboratorio);
+	• censire le anagrafiche delle persone a cui assegna/presta il materiale;
+	• assegnare/prestare le risorse
+• Permettere a chi riceve la risorsa di accedere al sistema per vedere la scadenza del prestito o richiedere una prenotazione di una risorsa.
+
+Tutti gli attori devono poter cambiare username e propri dati anagrafici a meno di nome, cognome e contatto che sono definiti in fase di censimento.
