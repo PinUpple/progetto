@@ -1,17 +1,32 @@
 
 public class Laboratorio // implements Serializable
 {
+	private int capacita; //libri massimi
 	private risorsaCartaceaLab[] libri;
 	private int totLibri;
 	
 	/* COSTRUTTORI */
 	public Laboratorio()
 	{
-	libri = new risorsaCartaceaLab[];
-	totLibri = 0;
+		capacita = 10000;
+		libri = new risorsaCartaceaLab[10000];
+		totLibri = 0;
+	}
+	
+	/** Costruisce laboratorio con capacita' definita
+	 * @param cap capacita' del nuovo laboratorio 
+	 */
+	public Laboratorio(int cap)
+	{
+		capacita = (cap>=10000) ? cap : 10000;
+		libri = new risorsaCartaceaLab[capacita];
+		totLibri = 0;
 	}
 
 	/* METODI CHE INTERROGANO LO STATO ATTUALE DEL LABORATORIO	 */
+	
+	/** Fornisce numero massimo di libri (capacita' del laboratorio)	 */
+	public int laCapacita() { return capacita; }
 
 /** Fornisce il numero di libri presenti in biblioteca */
 	public int numeroLibri() { return totLibri; }
@@ -21,11 +36,23 @@ public class Laboratorio // implements Serializable
  */
 	public risorsaCartaceaLab libroPerCodice(int cod)
 	{
-		int ((cod<0) || (cod>totLibri)) return null; 
+		if ((cod<0) || (cod>totLibri)) return null; 
 		return libri[cod];
 	}
 	
 	/* METODI CHE MODIFICANO LO STATO ATTUALE DEL LABORATORIO 	 */
+	/** Cambia la capacita', eseguito solo se la biblioteca e' senza libri.
+	 * @param cap la nuova capacita', default (e minimo) 10000
+	 * @return true;
+	 */
+	boolean cambiaCapacita(int cap)
+	{
+		if (totLibri>0) return false;
+		capacita = (cap>=10000) ? cap : 10000;
+		libri = new risorsaCartaceaLab[capacita];
+		return true;
+	}
+	
 /** Aggiunge al laboratorio un nuovo libro, in un certo numero di copie 
   	 * @param prot
 	 * @param dataIns
@@ -43,8 +70,12 @@ public class Laboratorio // implements Serializable
 	 */
 	public boolean nuovoLibro(String prot, String dataIns, String stato, Boolean prestabile, Integer anno, String tipo, String titolo, String autore, String editore, String genere, String collocazione, Integer numero)
 	{
-		libri[totLibri++] = new risorsaCartaceaLab(prot,dataIns,stato,prestabile,anno,tipo,titolo,autore,editore,genere,collocazione,numero);
-		return true;
+		if (totLibri<capacita)
+		{
+			libri[totLibri++] = new risorsaCartaceaLab(prot,dataIns,stato,prestabile,anno,tipo,titolo,autore,editore,genere,collocazione,numero);
+			return true;
+		}
+		return false; // limite massimo libri raggiunto
 	}
 	
 	/** Fa rientrare una copia prestata del libro, se qualche copia è stata prestata
