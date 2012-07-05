@@ -1,5 +1,6 @@
+package it.lab.business.core.modello;
 /** Implementa una risorsa multimediale: computer, proiettori, ecc. */
-public class risorsaMultimediale extends risorsa
+public class risorsaMultimediale extends Risorsa
 {
 
 	public String Nome;

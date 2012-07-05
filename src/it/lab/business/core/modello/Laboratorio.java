@@ -1,3 +1,5 @@
+package it.lab.business.core.modello;
+
 
 public class Laboratorio // implements Serializable
 {

@@ -1,5 +1,6 @@
+package it.lab.business.core.modello;
 /** Implementa una risorsa cartacea: libro, dispensa, ecc */
-public class risorsaCartacea extends risorsa
+public class risorsaCartacea extends Risorsa
 {
 
 	public String Titolo;
