@@ -42,6 +42,10 @@ public class Persona {
 		Ruolo = ruolo;
 	}
 
+	public Persona() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getNome() {
 		return Nome;
 	}
